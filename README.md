@@ -1,7 +1,23 @@
-##Listagem de Cursos da Udemy
-Este projeto é uma listagem de cursos da plataforma Udemy utilizando a API de parceiros fornecida pela própria Udemy.
+# Listagem de Cursos Udemy
 
-# Para a construção do front-end, foi utilizado o React e a biblioteca Chakra UI para criar a visualização dos cursos. Foi feita a utilização de recursos como filtros de preço e idioma, ordenação de resultados e apresentação das informações básicas dos cursos.
+Este projeto utiliza a API de parceiros da Udemy para listar cursos abaixo de R$50,00 na plataforma.
 
-em desenvolvimento
+## Tecnologias Utilizadas
 
+- React
+- Chakra UI
+
+## Funcionalidades
+
+- Listagem de cursos filtrados por preço máximo
+- Exibição de detalhes do curso, incluindo instrutores e preço atual
+
+## Como Executar o Projeto
+
+1. Clone o repositório
+2. Instale as dependências com `npm install`
+3. Execute o comando `npm start`
+
+## Considerações Finais
+
+Este projeto foi desenvolvido como uma forma de praticar habilidades em desenvolvimento web utilizando tecnologias modernas. Sinta-se livre para utilizar o código como quiser.
