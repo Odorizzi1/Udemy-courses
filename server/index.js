@@ -8,8 +8,13 @@ require('dotenv').config();
 const app = express();
 const server = http.createServer(app);
 
-app.use(cors()); // permitir todas as solicitações do front-end
-app.use(express.static('public'));
+const corsOptions = {
+    origin: '*', // permitir que qualquer domínio acesse a API
+    methods: 'GET', // permitir apenas o método GET
+    allowedHeaders: 'Content-Type, Authorization', // permitir cabeçalhos personalizados
+  };
+  
+  app.use(cors(corsOptions));
 
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.UD_API_KEY;
