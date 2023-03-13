@@ -9,13 +9,14 @@ const Container = () => {
 
   useEffect(() => {
     listItemsFromUdemyApi()
+    console.log(listItems, "o quevem")
   }, [])
 
 
   function listItemsFromUdemyApi() {
     fetch('https://udemy-courses-gold.vercel.app/cursos')
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => setListItems(data))
       .catch(error => console.error(error));
   }
   return (
