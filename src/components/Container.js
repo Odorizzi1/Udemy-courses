@@ -14,7 +14,7 @@ const Container = () => {
 
 
   function listItemsFromUdemyApi() {
-    fetch('https://udemy-courses-gold.vercel.app/udemy-courses-gold.vercel.app/cursos')
+    fetch('https://udemy-courses-gold.vercel.app/cursos')
       .then(response => response.json())
       .then(data => setListItems(data))
       .catch(error => console.error(error));
