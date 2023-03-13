@@ -14,8 +14,6 @@ app.use(express.static('public'));
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.UD_API_KEY;
 
-console.log(clientId, "iud")
-console.log(clientSecret)
 app.get('/cursos', async (req, res) => {
   try {
     const authToken = `${clientId}:${clientSecret}`;
@@ -43,6 +41,6 @@ app.get('/cursos', async (req, res) => {
   }
 });
 
-server.listen(process.env.PORT || 3000, () => {
+server.listen(3001, () => {
     console.log(`Servidor iniciado na porta ${process.env.PORT || 3000}.`);
   });

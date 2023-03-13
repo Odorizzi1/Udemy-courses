@@ -9,7 +9,6 @@ const Container = () => {
 
   useEffect(() => {
     listItemsFromUdemyApi()
-    console.log(listItems, "o quevem")
   }, [])
 
 
