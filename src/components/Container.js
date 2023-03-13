@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@chakra-ui/react";
 import Card from "./Card";
 import Header from "./Header";
 
-const Container = () => {
 
+const Container = () => {
+  const [listItems, setListItems] = useState([])
+
+  useEffect(() => {
+    listItemsFromUdemyApi()
+  }, [])
+
+
+  function listItemsFromUdemyApi() {
+    fetch('http://localhost:3001/cursos')
+      .then(response => response.json())
+      .then(data => setListItems(data))
+      .catch(error => console.error(error));
+  }
   return (
     <Box>
       <Box>
@@ -24,25 +37,16 @@ const Container = () => {
           justifyContent="space-evenly"
           p="10px"
         >
-          {/* <button onClick={() => teste()} >CLIQUE AQUI</button> */}
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {listItems.map(res => {
+            return (
+              <Card
+                imageUrl={res.image}
+                title={res.title}
+                description={res.link}
+              />
+            )
+          })}
+
         </Box>
       </Box>
     </Box>

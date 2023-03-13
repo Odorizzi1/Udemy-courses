@@ -11,7 +11,7 @@ function Card({ imageUrl, title, description }) {
             bg="white"
             boxShadow="md"
         >
-            <Image src={"https://www.gov.br/mj/pt-br/assuntos/noticias/mjc-oferece-23-cursos-via-internet-para-profissionais-de-seguranca/01_26_banner_cursoonline-002.png/@@images/88a7c32b-c829-4dc2-a839-5775edb5a0af.png"} alt={"title"} />
+            <Image src={imageUrl} alt={"title"} />
 
             <Box p="6">
                 <Box d="flex" alignItems="baseline">
@@ -19,7 +19,7 @@ function Card({ imageUrl, title, description }) {
                         ROOM · 1 BED
                     </Text>
                     <Text fontSize="sm" fontWeight="semibold" color="gray.500">
-                        "title"    {/* {title} */}
+                            {title}
                     </Text>
                 </Box>
 
@@ -30,7 +30,7 @@ function Card({ imageUrl, title, description }) {
                     lineHeight="tall"
                     noOfLines={3}
                 >
-                    {/* {description} */} "teste desc"
+                    {description} 
                 </Text>
             </Box>
         </Box>
