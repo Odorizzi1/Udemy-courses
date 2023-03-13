@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(cors()); // permitir todas as solicitações do front-end
-
+app.use(express.static('public'));
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.UD_API_KEY;
 
