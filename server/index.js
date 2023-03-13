@@ -41,6 +41,6 @@ app.get('/cursos', async (req, res) => {
   }
 });
 
-server.listen(3001, () => {
+server.listen(process.env.PORT, () => {
     console.log(`Servidor iniciado na porta ${process.env.PORT || 3000}.`);
   });
