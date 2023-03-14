@@ -1,39 +1,42 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
-function Card({ imageUrl, title, description }) {
-   
-    return (
-        <Box
-            w="18vw"
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            bg="white"
-            boxShadow="md"
+const Card = ({ title, subtitle, imageUrl, description }) => {
+  return (
+    <Box
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      bg="white"
+      boxShadow="md"
+      cursor="pointer"
+      onClick={() => window.location.href = "https://udemy.com" + description}
+      width="300px"
+      height="150px"
+      margin="10px"
+    >
+      <Flex h="100%">
+        <Image
+          src={imageUrl}
+          alt={title}
+          w="150px"
+          h="100%"
+          objectFit="cover"
+        />
+        <Flex
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+          p="6"
         >
-            <Image src={imageUrl} alt={"title"} />
+          <Text fontWeight="semibold" fontSize="md" ml="4">
+            {title}
+          </Text>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+};
 
-            <Box p="6">
-                <Box d="flex" alignItems="baseline">
-                    <Text fontSize="sm" fontWeight="semibold" color="gray.500" mr="2">
-                        ROOM · 1 BED
-                    </Text>
-                    <Text fontSize="sm" fontWeight="semibold" color="gray.500">
-                            {title}
-                    </Text>
-                </Box>
-
-                <Text
-                    mt="2"
-                    fontSize="sm"
-                    color="gray.500"
-                    lineHeight="tall"
-                    noOfLines={3}
-                >
-                    {description} 
-                </Text>
-            </Box>
-        </Box>
-    );
-}
 export default Card;

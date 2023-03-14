@@ -13,10 +13,12 @@ const Container = () => {
 
 
   function listItemsFromUdemyApi() {
-    fetch('https://udemy-courses-one.vercel.app/cursos')
+    fetch('http://localhost:3001/cursos')
+      .then(response => response.json())
       .then(data => setListItems(data))
       .catch(error => console.error(error));
   }
+
   return (
     <Box>
       <Box>
@@ -36,17 +38,19 @@ const Container = () => {
           justifyContent="space-evenly"
           p="10px"
         >
-          {listItems.map(res => {
+          {listItems.map((res, index) => {
             return (
               <Card
+                key={index}
                 imageUrl={res.image}
                 title={res.title}
                 description={res.link}
+                style={{ marginBottom: "10px" }} // adiciona margem inferior de 10px para separar os cards
               />
-            )
+            );
           })}
-
         </Box>
+
       </Box>
     </Box>
   )

@@ -1,23 +1,17 @@
 const express = require('express');
 const cors = require('cors');
-const http = require('http');
 const axios = require('axios');
 const { Buffer } = require('buffer');
 require('dotenv').config();
 
+const clientId = "TTwmoP1iGLmk2sfBEPnHVN38zVWV9MakOUhWTgW0"
+const clientSecret = "XrMvWOpiQyrXpakbYrSllz70R5V6EPs66dmk5mhqOf1X56ceqXVAeqlevDtCEBVZm8AdZR06hYwGp3WIrJm88ojN3MbbDBzNTDcWvIwDDhPJt8K978OARD44pEoUcqXc"
+
+console.log(clientId)
+console.log(clientSecret)
 const app = express();
-const server = http.createServer(app);
 
-const corsOptions = {
-    origin: '*', // permitir que qualquer domínio acesse a API
-    methods: 'GET', // permitir apenas o método GET
-    allowedHeaders: 'Content-Type, Authorization', // permitir cabeçalhos personalizados
-  };
-  
-  app.use(cors(corsOptions));
-
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.UD_API_KEY;
+app.use(cors());
 
 app.get('/cursos', async (req, res) => {
   try {
@@ -32,20 +26,22 @@ app.get('/cursos', async (req, res) => {
 
     const courses = response.data.results;
     const filteredCourses = courses.filter((course) => course.price === 'Free');
+   console.log(filteredCourses, "filtered")
     const courseData = filteredCourses.map((course) => {
       return {
         title: course.title,
         link: course.url,
-        image: course.image_125_H
+        image: course.image_480x270
       }
     });
-    res.json(courseData); // retornar a resposta em formato JSON
+
+    res.json(courseData);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Ocorreu um erro ao recuperar os cursos da Udemy.' });
+    res.status(500).send('Ocorreu um erro ao recuperar os cursos da Udemy.');
   }
 });
 
-server.listen(process.env.PORT, () => {
-    console.log(`Servidor iniciado na porta ${process.env.PORT || 3000}.`);
-  });
+app.listen(3001, () => {
+  console.log('Servidor iniciado na porta 3001.');
+});
