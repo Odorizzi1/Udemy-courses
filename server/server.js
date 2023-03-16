@@ -7,8 +7,6 @@ require('dotenv').config();
 const clientId = "TTwmoP1iGLmk2sfBEPnHVN38zVWV9MakOUhWTgW0"
 const clientSecret = "XrMvWOpiQyrXpakbYrSllz70R5V6EPs66dmk5mhqOf1X56ceqXVAeqlevDtCEBVZm8AdZR06hYwGp3WIrJm88ojN3MbbDBzNTDcWvIwDDhPJt8K978OARD44pEoUcqXc"
 
-console.log(clientId)
-console.log(clientSecret)
 const app = express();
 
 app.use(cors());

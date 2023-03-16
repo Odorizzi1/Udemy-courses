@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  list-courses:
+    container_name: list-courses
+    build: .
+    command: node server.js
+    volumes: 
+     - .:/usr/src/app
+    ports:
+      - 3001:3001
+    networks: 
+      - internal_list_courses
+    
+
+networks:
+  internal_list_courses:
+    driver: bridge

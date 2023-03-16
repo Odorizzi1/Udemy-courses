@@ -12,8 +12,13 @@ const Card = ({ title, subtitle, imageUrl, description }) => {
       cursor="pointer"
       onClick={() => window.location.href = "https://udemy.com" + description}
       width="300px"
-      height="150px"
-      margin="10px"
+      height="250px"
+      margin="20px"
+      transition="all 0.2s ease-in-out"
+      _hover={{
+        transform: "scale(1.05)",
+        boxShadow: "lg",
+      }}
     >
       <Flex h="100%">
         <Image
@@ -22,6 +27,8 @@ const Card = ({ title, subtitle, imageUrl, description }) => {
           w="150px"
           h="100%"
           objectFit="cover"
+          borderRadius="lg"
+          boxShadow="md"
         />
         <Flex
           flexDirection="column"
@@ -30,8 +37,11 @@ const Card = ({ title, subtitle, imageUrl, description }) => {
           textAlign="center"
           p="6"
         >
-          <Text fontWeight="semibold" fontSize="md" ml="4">
+          <Text fontWeight="semibold" fontSize="md" mb="4">
             {title}
+          </Text>
+          <Text fontSize="sm" color="gray.500" lineHeight="tall">
+            {subtitle}
           </Text>
         </Flex>
       </Flex>
