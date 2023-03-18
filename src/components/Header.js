@@ -12,9 +12,9 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-    <Box bg="#EBF8FF" px={4} py={3}>
+    <Box bg="#419ecf" px={4} py={3}>
       <Flex alignItems="center">
-        <Text fontSize="xl" fontWeight="bold" mr={4}>
+        <Text fontSize="xl" fontWeight="bold" color="#fff" mr={4}>
           Busque aqui seu curso!
         </Text>
         <Input
@@ -22,13 +22,16 @@ const Header = ({ onSearch }) => {
           placeholder="Digite aqui"
           size="md"
           w="300px"
+          bg="#fff"
+          color="#333"
           value={searchText}
           onChange={handleInputChange}
         />
         <Spacer />
         <Button
           variant="outline"
-          colorScheme="blue"
+          colorScheme="whiteAlpha"
+          color="#fff"
           onClick={() => setIsOpen(true)}
         >
           Contato
@@ -36,25 +39,25 @@ const Header = ({ onSearch }) => {
       </Flex>
       <Drawer isOpen={isOpen} placement="left" onClose={() => setIsOpen(false)}>
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader fontSize="2xl" fontWeight="bold">
+        <DrawerContent bg="#419ecf">
+          <DrawerCloseButton color="#fff"/>
+          <DrawerHeader fontSize="2xl" fontWeight="bold" color="#fff">
             Entre em contato comigo!
           </DrawerHeader>
           <DrawerBody>
             <List spacing={3}>
               <ListItem>
-                <Link href="https://www.linkedin.com/in/jonathan-odorizzi/" isExternal>
+                <Link href="https://www.linkedin.com/in/jonathan-odorizzi/" isExternal color="#fff">
                   LinkedIn
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://github.com/Odorizzi1" isExternal>
+                <Link href="https://github.com/Odorizzi1" isExternal color="#fff">
                   Github
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://api.whatsapp.com/send?phone=5547997709067" isExternal>
+                <Link href="https://api.whatsapp.com/send?phone=5547997709067" isExternal color="#fff">
                   WhatsApp
                 </Link>
               </ListItem>
