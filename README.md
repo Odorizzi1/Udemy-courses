@@ -9,14 +9,18 @@ Este projeto utiliza a API de parceiros da Udemy para listar cursos abaixo de R$
 
 ## Funcionalidades
 
-- Listagem de cursos filtrados por preço máximo
-- Exibição de detalhes do curso, incluindo instrutores e preço atual
+- Listagem de cursos filtrados por cursos gratuitos
+
+## próximas etapas
+- Criação de filtros
+- Criação de um background e padronizar UX
 
 ## Como Executar o Projeto
 
 1. Clone o repositório
 2. Instale as dependências com `npm install`
-3. Execute o comando `npm start`
+3. Entre na pasta src
+4. Execute o comando `npm start`
 
 ## Considerações Finais
 
